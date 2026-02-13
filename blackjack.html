@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackjack Simulator — Drew Lewis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">DL.</a>
+    <div class="nav-links">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact" class="cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+    <div class="project-hero-icon icon-blackjack">🃏</div>
+    <h1>Blackjack Simulator</h1>
+    <p class="project-hero-desc">Full-featured blackjack game with Hi-Lo card counting for practice and strategy refinement.</p>
+    <div class="project-tags" style="justify-content: center;">
+      <span class="tag">Python</span>
+      <span class="tag">Game Logic</span>
+      <span class="tag">Statistics</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="project-body">
+    <div class="project-detail-grid">
+      <div class="detail-main">
+        <h2>Overview</h2>
+        <p>A terminal-based blackjack simulator designed as a real practice tool for card counting. It implements the Hi-Lo system with running count, true count conversion, and recommended bet sizing — all updating in real time as you play.</p>
+
+        <h2>Key Features</h2>
+        <ul>
+          <li>Accurate blackjack rules: hit, stand, double down, split, insurance</li>
+          <li>Hi-Lo running count displayed in real time</li>
+          <li>True count calculation based on remaining decks</li>
+          <li>Dynamic bet sizing recommendations based on count</li>
+          <li>Session tracking for win rate and bankroll management</li>
+          <li>Configurable number of decks</li>
+        </ul>
+
+        <h2>What I Learned</h2>
+        <p>This was a deep dive into game logic and state management. Getting splits right — especially re-splits and split aces — required careful architecture. The counting system taught me a lot about how small statistical edges compound over time, which ties directly back to the thinking behind the value bet finder.</p>
+      </div>
+      <div class="detail-sidebar">
+        <div class="sidebar-block">
+          <h4>Role</h4>
+          <p>Solo Developer</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Timeline</h4>
+          <p>2025</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Stack</h4>
+          <p>Python</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Type</h4>
+          <p>Game / Personal Project</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <div class="project-nav">
+    <a href="value-bet-finder.html" class="project-nav-link">← Previous: Value Bet Finder</a>
+    <a href="maksim-landscaping.html" class="project-nav-link">Next: Maksim Landscaping →</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Drew Lewis. Built with purpose.</p>
+  </footer>
+
+</body>
+</html>
