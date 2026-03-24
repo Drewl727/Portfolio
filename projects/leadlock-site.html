@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeadLock Marketing Site — Drew Lewis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <nav>
+    <a href="../index.html" class="nav-logo">DL.</a>
+    <div class="nav-links">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact" class="cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+    <div class="project-hero-icon icon-leadlock">🔒</div>
+    <h1>LeadLock — Marketing Site</h1>
+    <p class="project-hero-desc">A full single-page marketing website for LeadLock, a local business visibility company. Built with HTML and Tailwind CSS to Stripe-level polish.</p>
+    <div class="project-tags" style="justify-content: center;">
+      <span class="tag">HTML / Tailwind CSS</span>
+      <span class="tag">UI/UX</span>
+      <span class="tag">Landing Page</span>
+    </div>
+    <div style="margin-top: 2rem;">
+      <a href="https://github.com/Drewl727/leadlock" target="_blank" style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; padding: 0.75rem 1.8rem; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; display: inline-block; transition: all 0.25s ease;">View on GitHub →</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="project-body">
+    <div class="project-detail-grid">
+      <div class="detail-main">
+        <h2>Overview</h2>
+        <p>LeadLock is a local business marketing company I'm building to help businesses like auto shops, barbers, landscapers, and plumbers get found on Google and stop losing leads to missed calls. This is the full marketing website I designed and built for it — meant to convert local business owners into paying clients.</p>
+        <p>The goal was Stripe or Linear-level design polish: clean typography, strong visual hierarchy, smooth animations, and a layout that builds trust fast. Every section was built to move someone from "what is this?" to "I need this."</p>
+
+        <h2>Sections Built</h2>
+        <ul>
+          <li><strong>Hero</strong> — Dark navy background, gradient headline, animated scroll reveal</li>
+          <li><strong>Problem Stats</strong> — 3 data-backed cards (87% Google, 62% unanswered calls, 5 min cold lead)</li>
+          <li><strong>Services</strong> — Google Business Profile optimization with 6 feature bullets + missed call text-back with a live phone mockup showing a real conversation thread</li>
+          <li><strong>Before/After</strong> — Side-by-side comparison of weak vs. optimized Google presence</li>
+          <li><strong>How It Works</strong> — 4-step timeline with gradient connector lines (Week 1–4)</li>
+          <li><strong>Pricing</strong> — Single $200/month card with competitor pricing crossed out in red</li>
+          <li><strong>Industries</strong> — 8-icon grid with hover glow effects</li>
+          <li><strong>FAQ</strong> — Animated accordion with 6 questions, accessible aria-expanded</li>
+          <li><strong>Contact</strong> — Lead capture form with mint focus states, Netlify-ready</li>
+        </ul>
+
+        <h2>Design System</h2>
+        <p>The design system was generated using a custom AI-powered UI/UX tool before any code was written. It recommended an Exaggerated Minimalism style with Scroll-Triggered Storytelling structure — bold typography, high contrast, and a narrative that walks the reader through the problem and solution. Brand colors: teal <code>#028090</code>, navy <code>#1A2332</code>, mint <code>#02C39A</code>, off-white <code>#F4F7F9</code>. Fonts: Outfit + Work Sans.</p>
+
+        <h2>Technical Details</h2>
+        <ul>
+          <li>Built entirely in a single <code>index.html</code> — no frameworks, no build step</li>
+          <li>Tailwind CSS via CDN with a custom config block defining the brand color palette</li>
+          <li>IntersectionObserver for scroll-triggered reveals with staggered delays</li>
+          <li>Sticky glass header with backdrop-filter blur</li>
+          <li>Smooth scroll with offset accounting for the fixed nav</li>
+          <li>FAQ accordion built in vanilla JS, keyboard accessible</li>
+          <li><code>prefers-reduced-motion</code> respected throughout</li>
+          <li>Mobile-first responsive at 375px, 768px, 1024px, 1440px</li>
+        </ul>
+      </div>
+      <div class="detail-sidebar">
+        <div class="sidebar-block">
+          <h4>Role</h4>
+          <p>Designer & Developer</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Timeline</h4>
+          <p>2026</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Stack</h4>
+          <p>HTML, Tailwind CSS, Vanilla JS</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Type</h4>
+          <p>Original Business / Marketing Site</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Repo</h4>
+          <p><a href="https://github.com/Drewl727/leadlock" target="_blank" style="color: var(--accent);">github.com/Drewl727/leadlock</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <div class="project-nav">
+    <a href="maksim-landscaping.html" class="project-nav-link">← Previous: Maksim Landscaping</a>
+    <a href="leadlock.html" class="project-nav-link">Next: LeadLock Business →</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Drew Lewis. Built with purpose.</p>
+  </footer>
+
+</body>
+</html>
