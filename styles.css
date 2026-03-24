@@ -7,7 +7,7 @@
   --border:       #232329;
   --border-hover: #3a3a44;
   --text:         #F0F0F5;
-  --text-secondary: #8888A0;
+  --text-secondary: #AAAABB;
   --accent:       #2563EB;
   --accent-hover: #1d4ed8;
   --accent-soft:  rgba(37, 99, 235, 0.12);
@@ -155,7 +155,7 @@ nav.scrolled {
 
 .hero-sub {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
   max-width: 500px;
   line-height: 1.75;
@@ -263,7 +263,7 @@ nav.scrolled {
 
 .section-desc {
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.05rem;
   max-width: 520px;
   line-height: 1.75;
 }
@@ -347,9 +347,9 @@ nav.scrolled {
 }
 
 .project-card p {
-  font-size: 0.9rem;
+  font-size: 0.975rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  line-height: 1.7;
   flex: 1;
 }
 
@@ -392,8 +392,8 @@ nav.scrolled {
 
 .about-text p {
   color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.85;
   margin-top: 1rem;
 }
 
@@ -539,7 +539,7 @@ footer {
 }
 
 .project-hero-desc {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
   line-height: 1.7;
   max-width: 520px;
@@ -573,8 +573,8 @@ footer {
 
 .detail-main p {
   color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.85;
   margin-bottom: 0.75rem;
 }
 
@@ -586,8 +586,8 @@ footer {
 
 .detail-main ul li {
   color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.85;
   padding-left: 1.25rem;
   position: relative;
 }
