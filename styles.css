@@ -503,8 +503,8 @@ footer {
 
 .back-link {
   font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text-secondary);
   text-decoration: none;
   display: inline-block;
