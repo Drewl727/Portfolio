@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>M&D Vending — Drew Lewis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="description" content="M&D Vending — business website for a premium vending machine operation targeting Rhode Island nightlife venues. Built by Drew Lewis.">
+  <meta property="og:title" content="M&D Vending — Drew Lewis">
+  <meta property="og:description" content="Business website for a premium vending machine operation targeting RI nightlife venues.">
+  <meta property="og:url" content="https://drewlewis.dev/projects/md-vending.html">
+  <meta property="og:type" content="website">
 </head>
 <body>
 
-  <nav>
+  <nav id="nav">
     <a href="../index.html" class="nav-logo">DL.</a>
     <div class="nav-links">
       <a href="../index.html#projects">Projects</a>
@@ -28,7 +35,7 @@
       <span class="tag">Business</span>
     </div>
     <div style="margin-top: 2rem;">
-      <a href="https://drewl727.github.io/mdvending/" target="_blank" style="font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; padding: 0.75rem 1.8rem; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; display: inline-block; transition: all 0.25s ease;">Visit Live Site →</a>
+      <a href="https://drewl727.github.io/mdvending/" target="_blank" class="btn btn-primary">Visit Live Site →</a>
     </div>
   </section>
 
@@ -50,7 +57,7 @@
         </ul>
 
         <h2>What I Learned</h2>
-        <p>This was one of my first full builds from scratch. I learned the GitHub Pages deployment process, custom domain setup, and how to think about a website as a business tool — not just a design exercise. Every section exists to move a venue owner closer to reaching out.</p>
+        <p>Building this reinforced how to think about a website as a business tool — not just a design exercise. I worked through the full GitHub Pages deployment and custom domain setup process, and learned to make every section decision around one goal: getting a venue owner to reach out.</p>
       </div>
       <div class="detail-sidebar">
         <div class="sidebar-block">
@@ -76,13 +83,19 @@
   <hr class="divider">
 
   <div class="project-nav">
-    <span></span>
-    <a href="value-bet-finder.html" class="project-nav-link">Next Project: Value Bet Finder →</a>
+    <a href="leadlock-site.html" class="project-nav-link">← Previous: LeadLock Marketing Site</a>
+    <a href="value-bet-finder.html" class="project-nav-link">Next: Value Bet Finder →</a>
   </div>
 
   <footer>
     <p>&copy; 2026 Drew Lewis. Built with purpose.</p>
   </footer>
 
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

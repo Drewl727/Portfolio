@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sports Value Bet Finder — Drew Lewis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="description" content="Python tool that pulls live odds from The Odds API, calculates implied probabilities, and exports value bets to Excel for tracking ROI.">
+  <meta property="og:title" content="Sports Value Bet Finder — Drew Lewis">
+  <meta property="og:description" content="Automated Python tool that identifies statistical value bets across RI-legal sportsbooks using live odds data.">
+  <meta property="og:url" content="https://drewlewis.dev/projects/value-bet-finder.html">
+  <meta property="og:type" content="website">
 </head>
 <body>
 
-  <nav>
+  <nav id="nav">
     <a href="../index.html" class="nav-logo">DL.</a>
     <div class="nav-links">
       <a href="../index.html#projects">Projects</a>
@@ -81,5 +88,11 @@
     <p>&copy; 2026 Drew Lewis. Built with purpose.</p>
   </footer>
 
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>

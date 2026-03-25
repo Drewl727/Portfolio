@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LeadLock — Drew Lewis</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="description" content="LeadLock — local business marketing company founded by Drew Lewis. Google Business Profile optimization, review generation, and missed call text-back for $200/month.">
+  <meta property="og:title" content="LeadLock — Drew Lewis">
+  <meta property="og:description" content="Local business marketing company helping shops and trades in Providence RI and Hartford CT get found on Google and never miss a lead.">
+  <meta property="og:url" content="https://drewlewis.dev/projects/leadlock.html">
+  <meta property="og:type" content="website">
 </head>
 <body>
 
-  <nav>
+  <nav id="nav">
     <a href="../index.html" class="nav-logo">DL.</a>
     <div class="nav-links">
       <a href="../index.html#projects">Projects</a>
@@ -58,7 +65,7 @@
         <p>A local SEO agency charges $500–$2,000/month. Reputation management software runs $100–$300. An answering service costs $200–$500. LeadLock replaces all three for $200 — and delivers it with personal, hands-on service rather than a faceless platform.</p>
 
         <h2>Where It Stands</h2>
-        <p>LeadLock is actively being built. The marketing site is live, the service offering is defined, and client outreach is underway in the Providence RI and Hartford CT markets. This is a real business — not a class project.</p>
+        <p>LeadLock is actively being built. The marketing site is live, the service offering is defined, and client outreach is underway in the Providence RI and Hartford CT markets.</p>
       </div>
       <div class="detail-sidebar">
         <div class="sidebar-block">
@@ -88,13 +95,19 @@
   <hr class="divider">
 
   <div class="project-nav">
-    <a href="leadlock-site.html" class="project-nav-link">← Previous: LeadLock Marketing Site</a>
     <span></span>
+    <a href="leadlock-site.html" class="project-nav-link">Next: LeadLock Marketing Site →</a>
   </div>
 
   <footer>
     <p>&copy; 2026 Drew Lewis. Built with purpose.</p>
   </footer>
 
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
 </body>
 </html>
