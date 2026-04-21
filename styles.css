@@ -325,6 +325,23 @@ nav.scrolled {
   background: rgba(37, 99, 235, 0.2);
 }
 
+.project-logo-wrap {
+  background: #fff;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  max-width: 160px;
+}
+
+.project-logo-img {
+  height: 26px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .card-arrow {
   font-size: 1.1rem;
   color: var(--text-secondary);
