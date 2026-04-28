@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brannack Electric Estimate Generator — Drew Lewis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <meta name="description" content="AI-powered estimating tool built for a Hartford, CT electrical contractor. React + Gemini API generates itemized job estimates and exports branded PDFs in under 60 seconds.">
+  <meta property="og:title" content="Brannack Electric Estimate Generator — Drew Lewis">
+  <meta property="og:description" content="React app using Gemini 2.0 Flash to generate professional electrical estimates with one-click PDF export. Built for a real client and an Applied AI course final.">
+  <meta property="og:url" content="https://drewlewis.dev/projects/brannack-estimate-generator.html">
+  <meta property="og:type" content="website">
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="../index.html" class="nav-logo">DL.</a>
+    <div class="nav-links">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact" class="cta">Get in Touch</a>
+    </div>
+  </nav>
+
+  <section class="project-hero">
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+    <h1>Brannack Electric Estimate Generator</h1>
+    <p class="project-hero-desc">An AI-powered estimating tool for a Hartford, CT electrical contractor — built for a real client pitch and an Applied AI final simultaneously. Enter job details, get a professional estimate in under 60 seconds, download a branded PDF.</p>
+    <div class="project-tags" style="justify-content: center;">
+      <span class="tag">React</span>
+      <span class="tag">Vite</span>
+      <span class="tag">Gemini API</span>
+      <span class="tag">Prompt Engineering</span>
+      <span class="tag">PDF Generation</span>
+      <span class="tag">AI Application</span>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="project-body">
+    <div class="project-detail-grid">
+      <div class="detail-main">
+
+        <h2>The Problem</h2>
+        <p>Small electrical contractors lose commercial jobs because their estimates are slow and unprofessional — emails, Word docs, handwritten notes. Competitors delivering clean, itemized PDFs win the bid. Tim Brannack at Brannack Electric, a Hartford, CT operation in business since 1980, needed a faster workflow without hiring an office manager or learning new software.</p>
+
+        <h2>The Solution</h2>
+        <p>A browser-based React app where Tim enters job details into a form — client, address, job type, scope, materials, estimated hours — hits Generate, and receives a complete professional estimate with a one-click PDF download. No backend, no accounts, no setup. It runs entirely in the browser using the Gemini API.</p>
+        <p>The same project served two purposes: a real-world client proof-of-concept for Brannack Electric, and the final project for AI 202 Applied AI at Bryant University.</p>
+
+        <h2>How It Works</h2>
+        <ul>
+          <li>User fills out a job details form (client info, job type, scope, materials, hours)</li>
+          <li>Structured prompt sends form data to Gemini 2.0 Flash with <code>responseMimeType: application/json</code> to enforce clean output</li>
+          <li>AI generates itemized line items, labor, material markup, and CT sales tax</li>
+          <li>Hardcoded business rules keep results consistent: $95/hr labor, 20% materials markup, 6.35% CT tax</li>
+          <li>Estimate preview renders instantly; html2canvas + jsPDF exports a branded PDF</li>
+          <li>API key modal on first load — no persistence, no backend required</li>
+        </ul>
+
+        <h2>Prompt Engineering</h2>
+        <p>The Prompt Lab tab in the app documents three iterations of the generation prompt. v1 returned unstructured text that was hard to parse. v2 added JSON enforcement but still produced inconsistent line item formatting. v3 locked the schema with explicit field names and business rule constraints, which resolved the math reliability issue and made the rendered output predictable.</p>
+
+        <h2>Testing Results</h2>
+        <p>Five scenarios were tested to stress the system across normal and edge case inputs. The math engine proved reliable; the risk is input quality, not arithmetic.</p>
+
+        <div style="margin: 1.25rem 0; overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+            <thead>
+              <tr>
+                <th style="text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); font-family: var(--font-display); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Scenario</th>
+                <th style="text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); font-family: var(--font-display); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Result</th>
+                <th style="text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); font-family: var(--font-display); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary);">Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">Normal Case — commercial panel upgrade</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: #4ade80; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem;">Pass</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">Clean output, math verified</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">Small Simple Job — EV charger install</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: #4ade80; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem;">Pass</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">$508.34 total, math perfect</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">Math Verification — 6 calculated values</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: #4ade80; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem;">Pass</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">All 6 values matched exactly</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">Vague Input — "needs rewiring done"</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: #f87171; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem;">Fail</td>
+                <td style="padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-secondary);">$1,780 estimate; real cost $8K–$15K. No warning shown.</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.65rem 0.75rem; color: var(--text-secondary);">Out of Scope — solar + fleet EV</td>
+                <td style="padding: 0.65rem 0.75rem; color: #f87171; font-family: var(--font-display); font-weight: 600; font-size: 0.85rem;">Fail</td>
+                <td style="padding: 0.65rem 0.75rem; color: var(--text-secondary);">$42,022 with no scope disclaimer</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>What Makes It Interesting</h2>
+        <p>Two birds, one stone: the project was designed to satisfy a real client need and a course rubric at the same time, which forced every design decision to be practical rather than academic.</p>
+        <p>The failure modes are documented, not hidden. Vague input produces confident but wrong estimates with no user warning — that's a real limitation, and it's a more honest finding than most student projects surface. The interesting story is that the math engine is reliable but the system fails silently on bad input, which is exactly the kind of thing a production version would need to address.</p>
+        <p>The Prompt Lab tab shows three real iterations of the generation prompt, including what broke in each version. Most AI demos skip this entirely. Including it is the difference between a demo and a project.</p>
+
+      </div>
+      <div class="detail-sidebar">
+        <div class="sidebar-block">
+          <h4>Role</h4>
+          <p>Solo Developer</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Context</h4>
+          <p>AI 202 Final + Client Pitch</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Timeline</h4>
+          <p>2025</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Stack</h4>
+          <p>React, Vite, Gemini 2.0 Flash, html2canvas, jsPDF</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Type</h4>
+          <p>AI Application / Client Work</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Tests Run</h4>
+          <p>5 scenarios · 3 prompt versions</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>Estimate Time</h4>
+          <p>Under 60 seconds</p>
+        </div>
+        <div class="sidebar-block">
+          <h4>GitHub</h4>
+          <p><a href="https://github.com/Drewl727/brannack-estimate-generator" target="_blank" style="color: var(--accent); text-decoration: none;">View Repo →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <div class="project-nav">
+    <a href="barnum-lawn.html" class="project-nav-link">← Previous: Barnum Lawn</a>
+    <a href="../index.html#projects" class="project-nav-link">All Projects →</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Drew Lewis. Built with purpose.</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>
